@@ -6,6 +6,8 @@ import { RxCross2 } from "react-icons/rx";
 import { SignupType } from "@akshitlakhera/common-zod-app"; 
 import axios from "axios";
 import { BACKEND_URL } from "@/config";
+import GoogleButton from "./ui/google_button";
+
 const Auth = ({type} : { type:"signin"|"signup"}) => {
   const navigate = useNavigate();
   const [postInputs,setPostInputs] = useState<SignupType>({
@@ -82,7 +84,7 @@ const Auth = ({type} : { type:"signin"|"signup"}) => {
               {loading? (<div className="flex gap-3 justify-center items-center">
                 <span>{type==="signin"? "Signin In": "Signin Up "}</span>      
                 <Loader/></div>) : type === "signup" ? "Sign up" : "Sign in"}</button>
-
+            <div className="flex gap-3 justify-center items-center"><GoogleButton/></div>
         </div>
         </div>
       </div>
